@@ -4,10 +4,14 @@
 #
 Name     : mvn-jersey-json
 Version  : 1.17.1
-Release  : 1
+Release  : 2
 URL      : https://repo1.maven.org/maven2/com/sun/jersey/jersey-json/1.17.1/jersey-json-1.17.1.jar
 Source0  : https://repo1.maven.org/maven2/com/sun/jersey/jersey-json/1.17.1/jersey-json-1.17.1.jar
 Source1  : https://repo1.maven.org/maven2/com/sun/jersey/jersey-json/1.17.1/jersey-json-1.17.1.pom
+Source2  : https://repo1.maven.org/maven2/com/sun/jersey/jersey-json/1.19/jersey-json-1.19.jar
+Source3  : https://repo1.maven.org/maven2/com/sun/jersey/jersey-json/1.19/jersey-json-1.19.pom
+Source4  : https://repo1.maven.org/maven2/com/sun/jersey/jersey-json/1.9/jersey-json-1.9.jar
+Source5  : https://repo1.maven.org/maven2/com/sun/jersey/jersey-json/1.9/jersey-json-1.9.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CDDL-1.1 GPL-2.0-only
@@ -25,15 +29,28 @@ data components for the mvn-jersey-json package.
 
 
 %prep
+%setup -q -n META-INF
 
 %build
 
 %install
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.17.1
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.17.1
+cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.17.1/jersey-json-1.17.1.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.17.1
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.17.1
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.17.1/jersey-json-1.17.1.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.19
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.19/jersey-json-1.19.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.19
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.19/jersey-json-1.19.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.9
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.9/jersey-json-1.9.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.9
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.9/jersey-json-1.9.pom
 
 
 %files
@@ -43,3 +60,7 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/sun/jersey/jersey-j
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.17.1/jersey-json-1.17.1.jar
 /usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.17.1/jersey-json-1.17.1.pom
+/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.19/jersey-json-1.19.jar
+/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.19/jersey-json-1.19.pom
+/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.9/jersey-json-1.9.jar
+/usr/share/java/.m2/repository/com/sun/jersey/jersey-json/1.9/jersey-json-1.9.pom
